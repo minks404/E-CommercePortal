@@ -1,7 +1,7 @@
-<?php
-?>
+
 <head>  
     <img src="images/logo.png"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/navCSS.css">
 </head>
 
@@ -21,6 +21,8 @@
   elseif( $_SESSION["sname"] != "admin") {  ?>
     <div class="topnav">
       <a href="home.php">Home</a>
+	  <a href="buy.php">Buy</a>
+	  <a href="sell.php">Sell</a>
       <a href="myCart.php">My Cart</a>
       <a href="showProfileUser.php">My Profile</a>
       <a href="changePassword.php">Change Password</a>
@@ -33,6 +35,8 @@
     <div class="topnav">
       <a href="home.php">Home</a>
       <a href="myCart.php">My Cart</a>
+	  <a href="buy.php">Buy</a>
+	  <a href="sell.php">Sell</a>
       <a href="validateUsers.php">Validate Users</a>
       <a href="showProfileUser.php">My Profile</a>
       <a href="changePassword.php">Change Password</a>
@@ -46,6 +50,10 @@
 
 ?>
 
-
+	<div class="footer">
+		<p>Author: Mayank Makhija &nbsp &nbsp Contact:
+		<a href="mailto:d3v.minks@gmail.com">d3v.minks@gmail.com</a> </br>
+		 © 2021 All Rights Reserved</p>
+	</div>
 
 

@@ -2,6 +2,15 @@
     <head>
         <title>User Login</title>
         <script src="js/loginFormValidation.js"></script>
+		
+		<script type="text/javascript" >
+		
+			function goHome() {
+				window.location.href = "./home.php";
+			}
+		
+		</script>
+		
         <?php   
             include("database.php");
             include("navbar.php");
@@ -49,9 +58,9 @@
                     setcookie("email", $email, time() + 3600);
                     setcookie("password", $password, time() + 3600);
                 }
-  
-                echo "<center><h1>LOGIN SUCCESSFULL!</h1></center>";
-                echo "<center><h3>GOTO <a href ='home.php'>HOME</a></h3></center>";
+				
+				echo '<script type="text/javascript">goHome();</script>';
+				
 
             }
         ?>

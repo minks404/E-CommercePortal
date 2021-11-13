@@ -1,9 +1,29 @@
-<?php
-    include("checkLogin.php");
-    include("navBar.php");
+<html>
+    <head>
+	
+		<title>Logout</title>
+		
+		<script type="text/javascript" >
+		
+			function goHome() {
+				window.location.href = "./home.php";
+			}
+		
+		</script>
+	
+		<?php
+			
+			include("navBar.php");
+			include("checkLogin.php");
     
-    session_unset();
-    session_destroy();
+			session_unset();
+			session_destroy();
 
-    echo "<center><h1><label>You have been logged out Successfully!</label></h1></center>";
-?>
+			echo '<script type="text/javascript">goHome();</script>';
+		?>
+        
+	</head>
+</html>
+		
+		
+		
