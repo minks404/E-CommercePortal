@@ -19,7 +19,7 @@
 
                 $query = "SELECT registration_certificate from users where user_ID = '$user_ID'";
 
-                $response = mysqli_query($con $query);
+                $response = mysqli_query($con, $query);
 
                 $result = mysqli_fetch_assoc($response);
 
