@@ -57,10 +57,10 @@
                     exit();
                 }
       
-		        $link = "<a href='http://localhost/OnlineProductTrading/updatePassword.php?verification_code=".$random_num."'>Click Here</a>";
+		        $link = "<a href='./updatePassword.php?verification_code=".$random_num."'>Click Here</a>";
 		        $subject = "Change password request";
 		        $message = "You have requested for update password.";
-		        $message.= "Please click on the link below to update your password";
+		        $message.= "Please click on the link below to update your password ";
 		        $message.= $link;
                 
 
