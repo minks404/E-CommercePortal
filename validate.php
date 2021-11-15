@@ -26,7 +26,7 @@
 				$query="SELECT * FROM users WHERE user_ID = '$user_ID'";
 				$response = mysqli_query($con, $query);
                 $result= mysqli_fetch_assoc($response)
-				$email = $result["email"];
+				$user_email = $result["email"];
 				
 				$subject = "Online Product Trading - User Validation Successfull!";
 		        $message = "You have requested for update password.";
@@ -43,7 +43,7 @@
 				$mail->Port	 = 587;
 
 				$mail->setFrom('d3v.minks@gmail.com', 'Online Product Trading - Forgot Password');		
-				$mail->addAddress($email, 'User');
+				$mail->addAddress($user_email, 'User');
 				
 				$mail->isHTML(true);								
 				$mail->Subject = $subject;
