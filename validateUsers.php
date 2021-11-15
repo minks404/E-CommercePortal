@@ -7,7 +7,7 @@
                 include("navBar.php");
 
                 $query="SELECT * from users WHERE validation = '0'";
-                $response = mysqli_query($con, $query);
+                $response = mysqli_query( $con, $query);
 
             ?>
 
