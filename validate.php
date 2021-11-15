@@ -35,7 +35,7 @@
 				
 				try {
 				
-				$mail->SMTPDebug = 1;									
+				$mail->SMTPDebug = 0;		// 2 for full msgs. 1 for errors, 0 for no msg							
 				$mail->isSMTP();											
 				$mail->Host	 = 'smtp.gmail.com';					
 				$mail->SMTPAuth = true;							
