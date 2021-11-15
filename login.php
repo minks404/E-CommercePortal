@@ -21,9 +21,9 @@
                 $password = $_POST["password"];
 
                 $query = "SELECT user_ID, name, password, company_name, validation from users where email = '$email'";
-                $response = mysql_query($query);
+                $response = mysqlii_query($query);
 
-                $num_rows = mysql_num_rows( $response );
+                $num_rows = mysqli_num_rows( $response );
 
                 if( $num_rows == 0 ) {
 
@@ -32,7 +32,7 @@
                     exit();
                 } 
 
-                $result = mysql_fetch_assoc( $response );
+                $result = mysqli_fetch_assoc( $response );
 
                 if(  $password != $result["password"]) {
                     echo "<center><h1>Login Unsuccessfull!<h1></center>";
