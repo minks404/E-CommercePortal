@@ -44,7 +44,7 @@
 				$mail->SMTPSecure = 'tls';							
 				$mail->Port	 = 587;
 
-				$mail->setFrom('d3v.minks@gmail.com', 'Online Product Trading - Forgot Password');		
+				$mail->setFrom('d3v.minks@gmail.com', 'Online Product Trading - User Validation');		
 				$mail->addAddress($user_email, 'User');
 				
 				$mail->isHTML(true);								
