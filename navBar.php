@@ -13,7 +13,7 @@
   if( !isset( $_SESSION["sname"] ) ) { ?>
 
     <div class="topnav">
-      <a href="home.php">Home</a>
+      <a href="index.php">Home</a>
       <a href="register.php">Register</a>
       <a href="login.php">Login</a>
     </div>  <?php
