@@ -22,8 +22,8 @@
 							" and wish you all the best for your future endeavours on our platform!<\br> You can now".
 							"log in at our portal!";
 							
-				$query="SELECT * FROM users WHERE user_ID = '$user_ID'";
-                $result = mysqli_query($con, $query);
+				$query2="SELECT * FROM users WHERE user_ID = '$user_ID'";
+                $result = mysqli_query($con, $query2);
 							
 				$email = $result["email"]; 
 							
