@@ -39,8 +39,8 @@
     </head>
 
     <body>
-        <center><h1><label >Validate User Profiles</label></h1></center>
-        <center><h5><label id="l1"></label></h5></center>
+        <center><h1><label >Validate User Profiles</label></h1>
+				<h5><label id="l1"></label></h5>
         </br>
         
             <table border="1" id="data_table">
@@ -79,5 +79,7 @@
                 </tr>
                     <?php } ?>
             </table>
+			
+		</center>
     </body>
 </html>

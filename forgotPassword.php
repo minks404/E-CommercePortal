@@ -1,9 +1,45 @@
 <html>
     <head><title>Forgot Password</title>
         <script src="js/loginFormValidation.js"></script>
-        <?php
+		
+		<?php 
+			
+		
+			use PHPMailer\PHPMailer\PHPMailer;
+			use PHPMailer\PHPMailer\Exception;
+			
+			require 'vendor/autoload.php';
+
+			$mail = new PHPMailer(true);
+			
             include("database.php");
             include("navBar.php");
+		?>
+		
+        <center><h1><label>Forgot Password</label></h1></center>
+        </br>
+		
+
+    </head>
+
+    <body>
+        <form onsubmit="return checkValues()" method="post" enctype="multipart/form-data">
+            <table border="1" align="center">
+                <tr>
+                    <td> <label>Email</label></td>
+                    <td> <input type="email" name="email" class="text_field" /></td>
+                </tr>
+                <tr>
+                    <td colspan = 2><center><input type="submit" name="submit" /></center></td>
+                </tr>
+            </table>
+        </form>
+		
+
+		</br>
+
+		
+		<?php
             
             if( isset($_POST["submit"])) {
 
@@ -20,24 +56,38 @@
                     echo "<center><h1><label>Invalid Email!</label></h1></center>";
                     exit();
                 }
-
-                // Always set content-type when sending HTML email
-		        $headers = "MIME-Version: 1.0" . "\r\n";
-		        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-		        // More headers
-		        $headers .= 'From: <manoj.max4@gmail.com>' . "\r\n";
-                //$headers .= 'Cc: myboss@example.com' . "\r\n";
-            
-		        $link = "<a href='http://localhost/OnlineProductBidding/updatePassword.php?verification_code=".$random_num."'>Click Here</a>";
-
-
+      
+		        $link = "<a href='http://localhost/OnlineProductTrading/updatePassword.php?verification_code=".$random_num."'>Click Here</a>";
 		        $subject = "Change password request";
 		        $message = "You have requested for update password.";
 		        $message.= "Please click on the link below to update your password";
 		        $message.= $link;
-                mail($email,$subject,$message,$headers);
                 
+
+			try {
+				
+				$mail->SMTPDebug = 2;									
+				$mail->isSMTP();											
+				$mail->Host	 = 'smtp.gmail.com';					
+				$mail->SMTPAuth = true;							
+				$mail->Username = 'd3v.minks@gmail.com';				
+				$mail->Password = '';						
+				$mail->SMTPSecure = 'tls';							
+				$mail->Port	 = 587;
+
+				$mail->setFrom('d3v.minks@gmail.com', 'Online Product Trading - Forgot Password');		
+				$mail->addAddress($email, 'User');
+				
+				$mail->isHTML(true);								
+				$mail->Subject = $subject;
+				$mail->Body = $message;
+				$mail->AltBody = $message;
+				$mail->send();
+				echo "Mail has been sent successfully!";
+				echo " <h1> Email sent to your email address.</h1>";
+			} catch (Exception $e) {
+				echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+			}
 
                 $update_query="UPDATE users SET verification_code = '$random_num' WHERE email = '$email'";
                 $result = mysql_query($update_query);
@@ -46,30 +96,15 @@
                     echo "Please try again!";
                     exit();
                 }
-                else echo "Email sent to your email address.";
-
-                echo "<a href='updatePassword.php?verification_code=".$random_num."'>Click here</a>.";
-
                 
+                
+ 
             }
         ?>
-
-        <center><h1><label>Forgot Password</label></h1></center>
-        </br>
-
-    </head>
-
-    <body>
-        <form onsubmit="return checkValues()" method="post" enctype="multipart/form-data">
-            <table border="1" align="center">
-                <tr>
-                    <td> <label>Email</label></td>
-                    <td> <input type="email" name="email" class="text_field" /></td>
-                </tr>
-                <tr>
-                    <td colspan = 2><center><input type="submit" name="submit" /></center></td>
-                </tr>
-            </table>
-        </form>
+		
+		</br>
+		</br>
+		</br>
+		</br>
     </body>
 </html>
