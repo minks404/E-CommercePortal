@@ -6,7 +6,7 @@
 		<script type="text/javascript" >
 		
 			function goHome() {
-				window.location.href = "./home.php";
+				window.location.href = "./index.php";
 			}
 		
 		</script>

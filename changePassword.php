@@ -16,9 +16,9 @@
 
                 $query = "SELECT password from users where email ='$email'";
 
-                $response = mysql_query( $query );
+                $response = mysqli_query($con, $query);
 
-                $result = mysql_fetch_assoc($response);
+                $result = mysqli_fetch_assoc($response);
             
                 if( $_POST["o_password"] != $result["password"] ) {
 
@@ -30,11 +30,11 @@
 
                 $update_query = "UPDATE users SET password = '$n_password' WHERE user_ID = '$user_ID' ";
 
-                $response = mysql_query( $update_query);
+                $response = mysqli_query( $con, $update_query);
 
                 if( !$response ) {
                     echo "<center><h1><label>Unknown Error! Please try again later!</label></h1></center>";
-                    echo mysql_error();
+                    echo mysqli_error($con);
                 }
                 else {
                     echo "<center><h1><label>Password Changed Successfully!</label></h1></center>";

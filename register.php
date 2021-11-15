@@ -45,7 +45,7 @@
                 values( '$name', '$email', '$password', '$f_name', '$company_name', '$company_address', '$contact_no', '$dealing_type', '$product_category', '$scale', '$date_time', '$registration_certificate')";
 
 
-                $result = mysql_query($query);
+                $result = mysqli_query($con, $query);
 
                 if($result) {
 		            echo "<center><h1>Registration Successfull!</h1></center>";
@@ -55,7 +55,7 @@
 		
                 else {
 		                echo  "<center><h1>Registration not Successful</h1></center>";
-		                echo "<center><h3>".mysql_error()."</h3></center>";
+		                echo "<center><h3>".mysqli_error($con)."</h3></center>";
 	            }
             }
 

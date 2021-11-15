@@ -12,8 +12,8 @@
 
         $user_ID = $_GET['id'];
         $query = "SELECT * from users WHERE user_ID='$user_ID'";
-        $response=mysql_query($query);
-        $result=mysql_fetch_assoc($response);
+        $response=mysqli_query($con, $query);
+        $result=mysqli_fetch_assoc($response);
 
         $name=$result["name"];
         $f_name=$result["f_name"];
@@ -69,7 +69,7 @@
                 dealing_type = '$dealing_type', product_category = '$product_category', scale = '$scale' WHERE user_ID = '$user_ID'";
             }
 
-            $result = mysql_query($update_query);
+            $result = mysqli_query($con, $update_query);
 
             $product_category = explode(",", $product_category);
             //after updation checkboxes need data back in array form, otherwise they show error in edit form of success page..converted back in array from string
@@ -80,7 +80,7 @@
 		
             else {
 		        echo  "<center><h1>Edit Profile Not Successful!</h1></center>";
-		        echo "<center><h3>".mysql_error()."</h3></center>";
+		        echo "<center><h3>".mysqli_error($con)."</h3></center>";
 	        } 
 
         }

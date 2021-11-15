@@ -7,11 +7,11 @@
                 include("navBar.php");
 
                 $query="SELECT * from users limit 2";
-                $response = mysql_query($query);
+                $response = mysqli_query($con, $query);
 
                 $query2 = "SELECT count(*) as total from users";
-                $response2 = mysql_query( $query2);
-                $data = mysql_fetch_assoc($response2);
+                $response2 = mysqli_query( $con, $query2);
+                $data = mysqli_fetch_assoc( $response2);
                 $no_of_records = $data["total"];
                 $per_page=2;
             ?>
@@ -66,7 +66,7 @@
                     <th>action</th>
                 </tr>
                     <?php
-                        while( $result= mysql_fetch_assoc($response) ) {
+                        while( $result= mysqli_fetch_assoc($response) ) {
                             $user_ID = $result["user_ID"];
                     ?>
                 <tr>

@@ -7,7 +7,7 @@
                 include("navBar.php");
 
                 $query="SELECT * from users WHERE validation = '0'";
-                $response = mysql_query($query);
+                $response = mysqli_query($con, $query);
 
             ?>
 
@@ -58,7 +58,7 @@
                     <th>action</th>
                 </tr>
                     <?php
-                        while( $result= mysql_fetch_assoc($response) ) {
+                        while( $result= mysqli_fetch_assoc($response) ) {
                             $user_ID = $result["user_ID"];
                     ?>
                 <tr>

@@ -44,7 +44,7 @@
                 values( '$product_name', '$product_image', '$seller_ID', '$seller_name', '$product_category', '$product_quantity', '$product_price')";
 
 
-                $result = mysql_query($query);
+                $result = mysqli_query($con, $query);
 
                 if($result) {
 		            echo "<center><h1>Product Registration Successfull!</h1></center>";
@@ -52,7 +52,7 @@
 		
                 else {
 		                echo  "<center><h1> Product Registration not Successful</h1></center>";
-		                echo "<center><h3>".mysql_error()."</h3></center>";
+		                echo "<center><h3>".mysqli_error($con)."</h3></center>";
 	            }
             }
 

@@ -11,15 +11,15 @@
 
             $query = "SELECT user_ID, email from users where verification_code ='$verification_code'";
 
-            $response = mysql_query( $query );
-            $num_rows = mysql_num_rows($response);
+            $response = mysqli_query( $con, $query );
+            $num_rows = mysqli_num_rows($response);
 
             if( $num_rows == 0) {
                 echo "<center><h1><label>Verification Code has expired, please try again!</label></h1></center>";
                 exit();
             }
 
-            $result = mysql_fetch_assoc($response);
+            $result = mysqli_fetch_assoc($response);
             
             if( isset($_POST["submit"])) {
 
@@ -27,11 +27,11 @@
 
                 $update_query = "UPDATE users SET password = '$password', verification_code = '' WHERE verification_code = '$verification_code' ";
 
-                $response = mysql_query( $update_query);
+                $response = mysqli_query( $con, $update_query);
 
                 if( !$response ) {
                     echo "<center><h1><label>Unknown Error! Please try again later!</label></h1></center>";
-                    echo mysql_error();
+                    echo mysqli_error($con);
                 }
                 else {
                     echo "<center><h1><label>Password Updated Successfully!</label></h1></center>";

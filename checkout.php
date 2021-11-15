@@ -51,13 +51,13 @@
 							$order_quant = $_COOKIE[$product_quant];
 									
 							$query="SELECT * from products WHERE product_ID =".$product_ID;
-							$response = mysql_query($query);
-							$result = mysql_fetch_assoc($response);
+							$response = mysqli_query($con, $query);
+							$result = mysqli_fetch_assoc($response);
 									
 							$new_product_quant = $result["product_quantity"] - $order_quant;
 									
 							$update_query="UPDATE products SET product_quantity ='$new_product_quant' WHERE product_ID='$product_ID'";
-							$result = mysql_query($update_query);
+							$result = mysqli_query($con, $update_query);
 							
 						}
 					}

@@ -9,13 +9,13 @@
     $index = $page*$per_page;
 
     $query = "SELECT * from users limit $index, $per_page";
-    $response = mysql_query($query);
+    $response = mysqli_query($con, $query);
 
     $html = '';
 
-    if(mysql_num_rows($response) > 0 ){
+    if(mysqli_num_rows($response) > 0 ){
 
-	    while($result = mysql_fetch_assoc($response)) {
+	    while($result = mysqli_fetch_assoc($response)) {
             $user_ID = $result["user_ID"];
             $reg_cert = $result["registration_certificate"];
 

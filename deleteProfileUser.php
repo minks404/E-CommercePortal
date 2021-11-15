@@ -19,9 +19,9 @@
 
                 $query = "SELECT registration_certificate from users where user_ID = '$user_ID'";
 
-                $response = mysql_query($query);
+                $response = mysqli_query($con $query);
 
-                $result = mysql_fetch_assoc($response);
+                $result = mysqli_fetch_assoc($response);
 
                 $registration_certificate = "upload/".$result["registration_certificate"];
 
@@ -29,7 +29,7 @@
 
                 $query = "DELETE from users where user_ID = '$user_ID'";
 
-                $result = mysql_query($query);
+                $result = mysqli_query($con, $query);
 
                 session_unset();
                 session_destroy();
@@ -39,7 +39,7 @@
 
                 else {
                     echo "<center><h1>Delete not Successfull</h1></center>";
-                echo "<center><h3>".mysql_error()."</h3></center>";
+                echo "<center><h3>".mysqli_error($con)."</h3></center>";
                 }
             }
         }

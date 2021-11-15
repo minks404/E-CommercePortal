@@ -69,8 +69,8 @@
 								$order_quant = $_COOKIE[$product_quant];
 								
 								$query="SELECT * from products WHERE product_ID =".$product_ID;
-								$response = mysql_query($query);
-								$result = mysql_fetch_assoc($response);
+								$response = mysqli_query($con, $query);
+								$result = mysqli_fetch_assoc($response);
 								
 								$product_price =  $result["product_price"] *  $order_quant;
 								

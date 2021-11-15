@@ -11,8 +11,8 @@
 
         $user_ID = $_SESSION['sid'];
         $query = "SELECT * from users WHERE user_ID='$user_ID'";
-        $response=mysql_query($query);
-        $result=mysql_fetch_assoc($response);
+        $response=mysqli_query($con, $query);
+        $result=mysqli_fetch_assoc($response);
 
         $name=$result["name"];
         $f_name=$result["f_name"];

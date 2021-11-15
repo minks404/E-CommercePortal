@@ -10,7 +10,7 @@
             include("navBar.php");
 				
 			$query="SELECT * from products";
-            $response = mysql_query($query);
+            $response = mysqli_query($con, $query);
 
 		?>
 			
@@ -113,7 +113,7 @@
 					
                 </tr>
                     <?php
-                        while( $result= mysql_fetch_assoc($response) ) {
+                        while( $result= mysqli_fetch_assoc($response) ) {
                             $product_ID = $result["product_ID"];		
                     ?>
                 <tr>

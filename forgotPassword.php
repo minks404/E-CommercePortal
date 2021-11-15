@@ -48,9 +48,9 @@
                 $email = $_POST["email"];
                 $query="SELECT  user_ID from users where email = '$email'";
 
-                $response=mysql_query($query);
+                $response=mysqli_query($con, $query);
 
-                $num_rows = mysql_num_rows($response);
+                $num_rows = mysqli_num_rows($response);
 
                 if( $num_rows == 0 ) {
                     echo "<center><h1><label>Invalid Email!</label></h1></center>";
@@ -90,7 +90,7 @@
 			}
 
                 $update_query="UPDATE users SET verification_code = '$random_num' WHERE email = '$email'";
-                $result = mysql_query($update_query);
+                $result = mysqli_query($con, $update_query);
 
                 if( !$result ) {
                     echo "Please try again!";
