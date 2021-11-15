@@ -21,7 +21,7 @@
                 $password = $_POST["password"];
 
                 $query = "SELECT user_ID, name, password, company_name, validation from users where email = '$email'";
-                $response = mysqli_query($query);
+                $response = mysqli_query($con, $query);
 
                 $num_rows = mysqli_num_rows( $response );
 
