@@ -23,9 +23,9 @@
                     echo "<center><h3>".mysqli_error( $con )."</h3></center>";
                 }
 				
-				$query="SELECT * FROM users WHERE user_ID = '$user_ID'";
-				$response = mysqli_query($con, $query);
-                $result= mysqli_fetch_assoc($response)
+				$query2="SELECT * FROM users WHERE user_ID = '$user_ID'";
+				$response = mysqli_query($con, $query2);
+                $result= mysqli_fetch_assoc($response);
 				$user_email = $result["email"];
 				
 				$subject = "Online Product Trading - User Validation Successfull!";
