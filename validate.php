@@ -29,11 +29,13 @@
 				$user_email = $result["email"];
 				
 				$subject = "Online Product Trading - User Validation Successfull!";
-		        $message = "You have requested for update password.";
+		        $message = "Congratulations! Your account has been successfully validated by our team.
+							We wish you all the best for your future endeavours on our platform.</br>
+							You can now login with your credentials!";
 				
 				try {
 				
-				$mail->SMTPDebug = 2;									
+				$mail->SMTPDebug = 1;									
 				$mail->isSMTP();											
 				$mail->Host	 = 'smtp.gmail.com';					
 				$mail->SMTPAuth = true;							
