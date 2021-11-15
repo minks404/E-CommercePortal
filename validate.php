@@ -24,7 +24,8 @@
                 }
 				
 				$query="SELECT * FROM users WHERE user_ID = '$user_ID'";
-                $result = mysqli_query($con, $query);
+				$response = mysqli_query($con, $query);
+                $result= mysqli_fetch_assoc($response)
 				$email = $result["email"];
 				
 				$subject = "Online Product Trading - User Validation Successfull!";
