@@ -21,6 +21,11 @@
 		        $message = "Congratulations! You have been successfully validated by our team. We welcome you aboard".
 							" and wish you all the best for your future endeavours on our platform!<\br> You can now".
 							"log in at our portal!";
+							
+				$query="SELECT email FROM users WHERE user_ID = '$user_ID'";
+                $email = mysqli_query($con, $query);
+							
+							
 				try {
 				
 				$mail->SMTPDebug = 2;									
