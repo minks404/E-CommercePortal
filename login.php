@@ -6,14 +6,14 @@
 		<script type="text/javascript" >
 		
 			function goHome() {
-				window.location.href = "./home.php";
+				window.location.href = "./index.php";
 			}
 		
 		</script>
 		
         <?php   
             include("database.php");
-            include("navbar.php");
+            include("navBar.php");
 
             if( isset( $_POST["submit"])) {
 
