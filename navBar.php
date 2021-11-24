@@ -33,7 +33,7 @@
   }
   else {  ?>
     <div class="topnav">
-      <a href="home.php">Home</a>
+      <a href="index.php">Home</a>
       <a href="myCart.php">My Cart</a>
 	  <a href="buy.php">Buy</a>
 	  <a href="sell.php">Sell</a>
