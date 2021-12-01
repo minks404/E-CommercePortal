@@ -27,8 +27,8 @@
 
                                                 <tr>
                                                     <td style="width:100%; background-color:White; border:Solid 1px #DFDFDF; text-align:justify; padding:10px; line-height:30px;">
-                                                        This E-Commerce portal is developed as the Laboratory Work of a course titled 'E-Business Systems' by Mayank Makhija of 
-														Master of Computer Applications of Bharati Vidyapeeth's 
+                                                        This E-Commerce portal is developed as the Laboratory Work of a course titled 'E-Business Systems' by Mayank Makhija and 
+														Mukul Yadav of Master of Computer Applications of Bharati Vidyapeeth's 
                                                         Institute of Computer Applications and Management (Affiliated to Guru Govind Singh Indraprasth University, New Delhi).
                                                         This portal simulates the working of online selling and purchasing of various items.
                                                         <br /><br style="height:15px; line-height:15px;" />
