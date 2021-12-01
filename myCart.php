@@ -57,6 +57,14 @@
 				
 				<?php
 						$total_price = 0;
+						$convenience_fee = 0;
+						
+						$user_ID = $_SESSION['sid'];
+						$query = "SELECT * from users WHERE user_ID='$user_ID'";
+						$response=mysqli_query($con, $query);
+						$result=mysqli_fetch_assoc($response);
+						
+						$scale = $result["scale"];
 					
                        for ($i = 1; $i <= 5; $i++) {
 						   
@@ -86,7 +94,13 @@
 					<td align = "right"><?php echo $product_price; ?></td>					
                 </tr>
                 
-					   <?php }} ?>
+					   <?php }} if( $scale != 1 ) $convenience_fee = 0.02*($total_price);
+									$total_price += $convenience_fee; ?>
+					   
+				<tr>
+                    <td colspan = 5 align = "center">Convinence Fee*</td>
+					<td align = "right"><?php echo $convenience_fee?></td>					
+                </tr>
 					   
 				 <tr>
                     <td colspan = 5 align = "center">TOTAL PRICE</td>
@@ -99,11 +113,13 @@
 
             </br>
             <center><input type="button" value="Checkout" onclick="checkout()" /></center>
+			</br>
+			</br>
+			</br>
+			<p>*Note: We provide free access to our services for our small-scale business users, but charge a convenience fee of 2% 
+				for all other business users.</p>
         </form>
     </body>
-	<div class="footer">
-		<p>Author: Mayank Makhija </br>
-		<a href="mailto:d3v.minks@gmail.com">d3v.minks@gmail.com</a></p>
-	</div>
+
 	
 </html>

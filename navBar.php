@@ -50,10 +50,10 @@
 
 ?>
 
-	<div class="footer">
-		<p>Author: Mayank Makhija &nbsp &nbsp Contact:
-		<a href="mailto:d3v.minks@gmail.com">d3v.minks@gmail.com</a> </br>
-		 © 2021 All Rights Reserved</p>
+
+		<div class="footer">
+		<p>Author: Mayank Makhija and Mukul Yadav </br>
+		<a href="mailto:d3v.minks@gmail.com">d3v.minks@gmail.com</a></p>
 	</div>
 
 
