@@ -8,6 +8,12 @@
 			function goHome() {
 				window.location.href = "./index.php";
 			}
+			
+			function payFee(){
+				
+				window.location.href = "./subscriptionPaid.php";
+				
+			}
 		
 		</script>
 		
@@ -20,7 +26,7 @@
                 $email = $_POST["email"];
                 $password = $_POST["password"];
 
-                $query = "SELECT user_ID, name, password, company_name, validation from users where email = '$email'";
+                $query = "SELECT user_ID, name, password, company_name, validation, subscription from users where email = '$email'";
                 $response = mysqli_query($con, $query);
 
                 $num_rows = mysqli_num_rows( $response );
@@ -46,6 +52,15 @@
                     this error persists contact admin at admin@onlineproductbidding.com. </h3></center>!";
                     echo "<center><h3>Sorry for the inconvenience but we follow proper protocols in order to ensure authenticity and
                         reliability of the users who join us.<h3></center>";
+                    exit();
+                }
+				if( $result["subscription"] == "0") {
+                    echo "<center><h1>Login Unsuccessfull!<h1></center>";
+                    echo "<center><h3>You have not paid one time subscription fee yet. Please pay the fee from below and try to login again. :) </h3></center>!";
+					echo "</br></br><center><h5> Note: You must pay ₹2000 as one time subscription fee for enrolling to our services.</h5>
+                            </center>";
+					
+					echo '<center></br><input type="button" value="Pay Fee" onclick="payFee()" /></center>';
                     exit();
                 }
                 
