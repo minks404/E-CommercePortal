@@ -1,15 +1,15 @@
 <html>
     <head>
         <title>User Registration Form </title>
-        <script src="js/regFormValidation.js">
+   
 		
 			<script type="text/javascript" >
 		
-			function payFee(){
+				function payFee(){
 				
-				window.location.href = "./subscriptionPaid.php";
+					window.location.href = "./subscriptionPaid.php";
 				
-			}
+				}
 				
 			</script>
     </head>
