@@ -9,11 +9,6 @@
 				window.location.href = "./index.php";
 			}
 			
-			function payFee(){
-				
-				window.location.href = "./subscriptionPaid.php";
-				
-			}
 		
 		</script>
 		
@@ -56,11 +51,9 @@
                 }
 				if( $result["subscription"] == "0") {
                     echo "<center><h1>Login Unsuccessfull!<h1></center>";
-                    echo "<center><h3>You have not paid one time subscription fee yet. Please pay the fee from below and try to login again. :) </h3></center>!";
+                    echo "<center><h3>You have not paid one time subscription fee yet. Please pay the fee and try to login again. :) </h3></center>!";
 					echo "</br></br><center><h5> Note: You must pay ₹2000 as one time subscription fee for enrolling to our services.</h5>
                             </center>";
-					
-					echo '<center></br><input type="button" value="Pay Fee" onclick="payFee()" /></center>';
                     exit();
                 }
                 
