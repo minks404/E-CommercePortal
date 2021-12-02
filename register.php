@@ -3,15 +3,6 @@
         <title>User Registration Form </title>
    
 		
-			<script type="text/javascript" >
-		
-				function payFee(){
-				
-					window.location.href = "./subscriptionPaid.php";
-				
-				}
-				
-			</script>
     </head>
 
     <?php
@@ -60,12 +51,7 @@
                 if($result) {
 		            echo "<center><h1>Registration Successfull!</h1></center>";
 					echo "<center><h3>You must wait for atleast 2hrs after registration so that we can validate you to use our portal.";
-					
-					echo "</br></br><center><h5> Note: You must pay ₹2000 as one time subscription fee for enrolling to our services.</h5>
-                            </center>";
-					
-					echo '<center></br><input type="button" value="Pay Fee" onclick="payFee()" /></center>';
-                    
+					 
 	            }
 		
                 else {
